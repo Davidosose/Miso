@@ -1,6 +1,7 @@
 body{
     margin: 0; 
     font-family: Arial, sans-serif;
+    background: linear-gradient(100deg, #ffffff, #aaf39b);
 }
 header{
     background: none; 
@@ -109,14 +110,23 @@ nav a:hover {
     background-color: #128C7E;
 }
 .model{ 
-    background: #eee; 
+    background: #009b77; 
+    color: white;
     margin: 10px 0; 
     padding: 10px; 
     cursor: pointer; 
 }
 .brands{ 
-    background: #ddd; 
     padding: 10px; 
+}
+.brands img{
+    max-height: 150px;
+}
+.cars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .hidden{ 
     display: none; 
