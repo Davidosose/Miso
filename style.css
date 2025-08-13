@@ -76,6 +76,14 @@ nav a:hover {
 .models, .contact{ 
     padding: 20px; 
 }
+.model{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.model img{
+    height: 20px;
+}
 .contact img{
     height: 20px;
 }
