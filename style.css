@@ -37,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #ff6600;
+  color: #aaf39bbb;
 }
 
 
@@ -84,6 +84,12 @@ nav a:hover {
 }
 .model img{
     height: 20px;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .contact img{
     height: 20px;
@@ -132,6 +138,7 @@ nav a:hover {
     display: none; 
 }
 footer{ 
+    width: 100%;
     text-align: center; 
     padding: 12px; 
     margin-top: 2rem;
