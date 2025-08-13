@@ -1,0 +1,149 @@
+body{
+    margin: 0; 
+    font-family: Arial, sans-serif;
+}
+header{
+    background: none; 
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ff6600;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.hero{ 
+    height: 70vh; 
+    position: relative; 
+    overflow: hidden; 
+}
+.slide{ 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0; 
+    transition: opacity 1s; 
+}
+.slide.active{ 
+    opacity: 1; 
+}
+.social-links img{
+    height: 25px;
+}
+.hero-text{ 
+    position: absolute; 
+    bottom: 20px; 
+    left: 20px; 
+    color: white; 
+}
+.models, .contact{ 
+    padding: 20px; 
+}
+.contact img{
+    height: 20px;
+}
+.contact a{
+    padding: .7rem;
+    border-radius: .8rem;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    text-decoration: none;
+    color: white;
+    margin-top: .7rem;
+}
+.contact a:nth-child(2){
+    background-color: #25D366;
+}
+.contact a:nth-child(3){
+    background-color: #111;
+}
+.contact a:nth-child(4){
+    background-color: #128C7E;
+}
+.model{ 
+    background: #eee; 
+    margin: 10px 0; 
+    padding: 10px; 
+    cursor: pointer; 
+}
+.brands{ 
+    background: #ddd; 
+    padding: 10px; 
+}
+.hidden{ 
+    display: none; 
+}
+footer{ 
+    text-align: center; 
+    padding: 12px; 
+    margin-top: 2rem;
+    background: #222; 
+    color: white; 
+}
+@media(max-width: 768px){
+    nav{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #222;
+        padding: 15px;
+        border-radius: 8px;
+        width: 200px;
+        animation: slideDown 0.3s ease forwards;
+  }
+
+  nav.show {
+        display: flex;
+  }
+
+  .hamburger {
+        display: block;
+  }
+  @keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+}
+

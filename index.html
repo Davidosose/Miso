@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Miso Autos</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">MisoAutos</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#models">Models</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+</header>
+
+<section id="home" class="hero">
+  <div class="slides">
+    <div class="slide" style="background-image: url('./image/motion2.jpg');">
+      <div class="hero-text">
+        <h1>Driven by Precision</h1>
+        <p>Where Innovation Drives Style.</p>
+        <div class="social-links">
+          <a href="#"><img src="./icons/facebook.png" alt=""></a>
+          <a href="#"><img src="./icons/instagram.png" alt=""></a>
+          <a href="#"><img src="./icons/twitter.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('./image/motion.jpg');">
+      <div class="hero-text">
+        <h1>Built for Every Journey</h1>
+        <p>From city streets to open highways.</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('./image/luxury.jpg');">
+      <div class="hero-text">
+        <h1>Luxury, Redefined</h1>
+        <p>Comfort, safety, and performance in harmony.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="models" class="models">
+  <h2>Explore Our Models</h2>
+  <div class="model" onclick="toggleBrands('suvs')">SUVs</div>
+  <div id="suvs" class="brands hidden">
+    Toyota, Lexus, BMW, Mercedes-Benz
+  </div>
+  <div class="model" onclick="toggleBrands('sedans')">Sedans</div>
+  <div id="sedans" class="brands hidden">
+    Toyota, Audi, BMW, Mercedes-Benz
+  </div>
+  <div class="model" onclick="toggleBrands('convoy')">Convoy</div>
+  <div id="convoy" class="brands hidden">
+    Bentley, Rolls-Royce, Mercedes-Maybach
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact the Brand</h2>
+  <a href="https://wa.me/2348012345678"><img src="./icons/icons8-whatsapp-50.png" alt="">WhatsApp</a>
+  <a href="mailto:sales@example.com"><img src="./icons/icons8-email-48.png" alt="">Email</a>
+  <a href="tel:+2348012345678"><img src="./icons/icons8-telephone-80.png" alt="">Call</a>
+
+  <footer>
+  <p>© 2025 Velocity Motors. All rights reserved.</p>
+  <p>Site by David Odion</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
