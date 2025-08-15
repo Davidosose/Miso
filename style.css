@@ -81,19 +81,39 @@ nav a:hover {
     color: white; 
 }
 .models, .contact{ 
-    padding: 20px; 
-}
-.model{
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    padding: 30px 
 }
 .model img{
     height: 20px;
 }
+.model{ 
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #222; 
+    color: rgb(248, 248, 248);
+    margin: 10px 0; 
+    padding: 10px; 
+    cursor: pointer; 
+}
+.brands{ 
+    padding: 10px; 
+}
+.brands img{
+    max-height: 150px;
+}
+.cars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hidden{ 
+    display: none; 
+}
 
 .about {
-  background-image: url('about-bg.jpg');
+  background-image: url('./image/about-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -111,7 +131,7 @@ nav a:hover {
 }
 
 .about h2 {
-  font-size: clamp(1.8rem, 5vw, 2rem);
+  font-size: clamp(1.1rem, 5vw, 2rem);
   margin-bottom: 1rem;
   font-weight: bold;
 }
@@ -120,6 +140,7 @@ nav a:hover {
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.6;
 }
+
 
 
 .contact{
@@ -143,37 +164,16 @@ nav a:hover {
     color: white;
     margin-top: .7rem;
 }
-.contact a:nth-child(2){
-    background-color: #25D366;
+.contact a{
+    background: #222;
+    border: 1px solid rgb(129, 91, 91);
 }
-.contact a:nth-child(3){
-    background-color: #111;
+.contact a:hover{
+    background: black;
+    transition: .3s ease;
 }
-.contact a:nth-child(4){
-    background-color: #128C7E;
-}
-.model{ 
-    background: #009b77; 
-    color: white;
-    margin: 10px 0; 
-    padding: 10px; 
-    cursor: pointer; 
-}
-.brands{ 
-    padding: 10px; 
-}
-.brands img{
-    max-height: 150px;
-}
-.cars{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.hidden{ 
-    display: none; 
-}
+
+
 
 
 .payment-container{ 
@@ -258,9 +258,5 @@ footer p{
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-}
-@media(max-width: 400px){
-    
-   
 }
 
