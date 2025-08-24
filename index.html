@@ -10,11 +10,11 @@
 
 <header>
   <div class="navbar">
-    <div class="logo"><img src="./image/logo.jpeg" alt="">MisoAutos</div>
+    <div class="logo"><img src="./image/logo.png" alt="">MisoAutos</div>
     <div class="hamburger" id="hamburger">&#9776;</div>
     <nav id="nav-links">
       <a href="#home">Home</a>
-      <a href="#models">Models</a>
+      <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
 </header>
@@ -51,34 +51,30 @@
   </div>
 </section>
 
-<section id="models" class="models">
-  <h2>Explore Our Models</h2>
-  <div class="model" onclick="toggleBrands('suvs')">SUVs <img src="./icons/icon-suvs.svg" alt=""></div>
-  <div id="suvs" class="brands hidden">
-    <div class="cars">
-      <img style="max-height: 120px;" src="./image/escalade.png" alt="">Escalade
-      <img src="./image/g wagon.png" alt="">G Wagon
-      <img src="./image/land cruiser prado.png" alt="">Land Cruiser Prado
+
+
+
+<section id="services" class="services">
+  <h2>Our Services</h2>
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <div class="carousel-slide">
+        <h3>Cars for Sale</h3>
+        <p>Browse a wide range of premium cars available for purchase at competitive prices.</p>
+        <a href="./sale.html" class="service-btn">View Cars</a>
+      </div>
+
+      <div class="carousel-slide">
+        <h3>Self Drive Options</h3>
+        <p>Choose from our fleet of vehicles available for self drive at affordable daily rates.</p>
+        <a href="./rent.html" class="service-btn">Explore Options</a>
+      </div>
     </div>
-  </div>
-  <div class="model" onclick="toggleBrands('sedans')">Sedans <img src="./icons/icon-sedans.svg" alt=""></div>
-  <div id="sedans" class="brands hidden">
-    <div class="cars">
-      <img src="./image/audi.png" alt="">Audi
-      <img src="./image/corolla.png" alt="">Toyota Corolla
-      <img src="./image/honda.png" alt="">Honda
-      <img src="./image/hyundai.png" alt="">Hyundai
-      <img src="./image/kia.png" alt="">Kia
-      <img src="./image/dodge.png" alt="">Dodge
-      <img src="./image/benz e class.png" alt="">Mercedes Benz E-class
-      <img src="./image/bmw.png" alt="">BMW
-      <img src="./image/lexus.png" alt="">Lexus
-    </div>
-  </div>
-  <div class="model" onclick="toggleBrands('convoy')">Van / Minibus <img src="./icons/convoy.png" alt=""></div>
-  <div id="convoy" class="brands hidden">
-    <div class="cars">
-      <img src="./image/mercedes sprinter bus.png" alt="">Mercedes Sprinter Bus
+
+    <!-- Dots Navigation -->
+    <div class="carousel-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
     </div>
   </div>
 </section>
@@ -102,28 +98,27 @@
   </div>
 </section>
 
+<section class="map-section">
+  <h2>Find Us</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.497655703466!2d3.350239214785113!3d6.601838295227846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d64f7b05433%3A0x7db1e5a2e7cdbf23!2sCaleb%20University!5e0!3m2!1sen!2sng!4v1690800000000!5m2!1sen!2sng" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <a href="https://wa.me/2349129378349"><img src="./icons/icons8-whatsapp-50.png" alt="">WhatsApp</a>
   <a href="mailto:ayoakom@icloud.com"><img src="./icons/icons8-email-48.png" alt="">Email</a>
   <a href="tel:+2347033924338"><img src="./icons/icons8-telephone-80.png" alt="">Call</a>
 
-  <div class="payment-container">
-  <h2>Bank Transfer Payment</h2>
-  
-  <div class="bank-details">
-    <p><strong>Bank Name:</strong> Opay</p>
-    <p><strong>Account Number:</strong> 6109583743</p>
-    <p><strong>Account Name:</strong> SAMUEL TEMILOLUWA AKOMOLEDE</p>
-  </div>
-
-  <form id="paymentForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="text" id="amount" placeholder="Amount Paid" required>
-    <textarea id="details" placeholder="Additional Details (optional) (pickuplocation e.t.c.)"></textarea>
-    <button type="submit">Send via WhatsApp</button>
-    </form>
-    
   <footer>
     <div>
     <p>© 2025 Miso Autos. All rights reserved.</p>

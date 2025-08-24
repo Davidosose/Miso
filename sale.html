@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sale</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Models</title>
+  <link rel="stylesheet" href="sale.css"/>
+</head>
+<body>
+    <header>
+    <div class="navbar">
+    <div class="logo"><img src="./image/logo.png" alt="">Sales Page</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav id="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./rent.html">Rentals</a>
+      <a href="#payment">Payment</a>
+    </header>
+
+  <section id="sale" class="car-slider">
+    <h1>For Sale</h1>
+    <!-- Categories -->
+    <div class="categories">
+      <button class="category-btn active" data-category="sedans">Sedans</button>
+      <button class="category-btn" data-category="suvs">SUVs</button>
+      <button class="category-btn" data-category="vans">Vans & Buses</button>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider-container">
+      <button class="arrow left" aria-label="Previous">&#10094;</button>
+
+      <div class="slider-track" id="slider-track">
+        <!-- ===== SEDANS ===== -->
+        <div class="car-card sedans">
+          <img src="./image/Bmw.png" alt="Toyota Camry">
+          <h3>Toyota Camry</h3>
+          <p>Comfortable, fuel-efficient daily driver.
+            #18,000,000
+          </p>
+        </div>
+        <div class="car-card sedans">
+          <img src="./image/corolla.png" alt="Honda Accord">
+          <h3>Honda Accord</h3>
+          <p>Sleek design with smooth performance.</p>
+        </div>
+        <div class="car-card sedans">
+          <img src="./image/kia.png" alt="Lexus ES">
+          <h3>Lexus ES</h3>
+          <p>Refined luxury with quiet cabin.</p>
+        </div>
+        <div class="car-card sedans">
+          <img src="./image/audi.png" alt="Toyota Corolla">
+          <h3>Toyota Corolla</h3>
+          <p>Legendary reliability and economy.</p>
+        </div>
+
+        <!-- ===== SUVS ===== -->
+        <div class="car-card suvs">
+          <img src="./image/escalade.png" alt="Toyota Prado">
+          <h3>Toyota Prado</h3>
+          <p>All-terrain strength, premium feel.</p>
+        </div>
+        <div class="car-card suvs">
+          <img src="./image/g wagon.png" alt="Range Rover Sport">
+          <h3>Range Rover Sport</h3>
+          <p>Luxury SUV with serious power.</p>
+        </div>
+        <div class="car-card suvs">
+          <img src="./image/land cruiser prado.png" alt="Lexus RX">
+          <h3>Lexus RX</h3>
+          <p>Comfort-first with modern tech.</p>
+        </div>
+        <div class="car-card suvs">
+          <img src="images/suv4.png" alt="Toyota Highlander">
+          <h3>Toyota Highlander</h3>
+          <p>Spacious 7-seater for families.</p>
+        </div>
+
+        <!-- ===== VANS & BUSES ===== -->
+        <div class="car-card vans">
+          <img src="./image/mercedes sprinter bus.png" alt="Mercedes Sprinter">
+          <h3>Mercedes Sprinter</h3>
+          <p>Spacious, ideal for groups.</p>
+        </div>
+        <div class="car-card vans">
+          <img src="images/van2.png" alt="Toyota Hiace">
+          <h3>Toyota Hiace</h3>
+          <p>Reliable transport for business.</p>
+        </div>
+        <div class="car-card vans">
+          <img src="images/van3.png" alt="Ford Transit">
+          <h3>Ford Transit</h3>
+          <p>Versatile cargo & people mover.</p>
+        </div>
+        <div class="car-card vans">
+          <img src="images/van4.png" alt="Hyundai H1">
+          <h3>Hyundai H1</h3>
+          <p>Comfortable and practical.</p>
+        </div>
+      </div>
+
+      <button class="arrow right" aria-label="Next">&#10095;</button>
+    </div>
+  </section>
+  
+
+
+  <section id="payment">
+   <div class="form-container" id="buyingForm">
+  <h2>Car Purchase Payment Form</h2>
+  <form id="buyingPaymentForm">
+    <input type="text" id="buyingName" placeholder="Full Name" required>
+    <input type="text" id="buyingAccountName" placeholder="Account Name" required>
+    <input type="number" id="buyingAmount" placeholder="Amount Paid" required>
+    <input type="text" id="buyingAddress" placeholder="Delivery Address" required>
+    <input type="tel" id="buyingPhone" placeholder="Phone Number" required>
+    <textarea id="buyingMessage" placeholder="Additional Details (optional)"></textarea>
+    <button type="submit">Send Purchase Details via WhatsApp</button>
+  </form>
+</div>
+
+
+  </section>
+  
+
+<script>
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+    // Elements
+const track = document.getElementById('slider-track');
+const categoryBtns = document.querySelectorAll('.category-btn');
+const arrowPrev = document.querySelector('.arrow.left');
+const arrowNext = document.querySelector('.arrow.right');
+
+let currentCategory = 'sedans';
+let currentIndex = 0;       // index of first visible card in the current view
+let itemsPerView = 4;       // recalculated on resize
+let maxIndex = 0;           // recalculated after filter
+
+function getVisibleCards() {
+  // Only cards of the current category (others are display:none via CSS toggle)
+  return Array.from(track.children).filter(el => el.classList.contains(currentCategory));
+}
+
+function applyCategory(cat) {
+  currentCategory = cat;
+  currentIndex = 0;
+
+  // Toggle visibility by category using inline style (keeps content in HTML/CSS)
+  Array.from(track.children).forEach(card => {
+    if (card.classList.contains(cat)) {
+      card.style.display = '';      // show
+    } else {
+      card.style.display = 'none';  // hide
+    }
+  });
+
+  // Active button state
+  categoryBtns.forEach(b => b.classList.toggle('active', b.dataset.category === cat));
+
+  // Recompute layout metrics & render
+  recalc();
+  render();
+}
+
+function recalc() {
+  const cards = getVisibleCards();
+  if (cards.length === 0) { maxIndex = 0; return; }
+
+  // Use the first visible card to compute width
+  const cardWidth = cards[0].getBoundingClientRect().width + 8 /* gap */;
+  const containerWidth = document.querySelector('.slider-container').getBoundingClientRect().width - (56 * 2);
+  // items per view (guard at least 1)
+  itemsPerView = Math.max(1, Math.floor(containerWidth / cardWidth));
+
+  // Max starting index so we don't scroll past the last full view
+  maxIndex = Math.max(0, cards.length - itemsPerView);
+  // Clamp current index in bounds
+  currentIndex = Math.min(currentIndex, maxIndex);
+}
+
+function render() {
+  const cards = getVisibleCards();
+  if (cards.length === 0) { track.style.transform = 'translateX(0)'; return; }
+
+  // Compute card width again for accurate pixel shift
+  const cardWidth = cards[0].getBoundingClientRect().width + 8 /* gap */;
+  const shift = currentIndex * cardWidth;
+  track.style.transform = `translateX(-${shift}px)`;
+}
+
+function next() {
+  // Wrap infinitely across views
+  if (maxIndex === 0) return; // nothing to slide
+  currentIndex = (currentIndex + 1) % (maxIndex + 1);
+  render();
+}
+
+function prev() {
+  if (maxIndex === 0) return;
+  currentIndex = (currentIndex - 1 + (maxIndex + 1)) % (maxIndex + 1);
+  render();
+}
+
+// Event listeners
+arrowNext.addEventListener('click', next);
+arrowPrev.addEventListener('click', prev);
+
+categoryBtns.forEach(btn => {
+  btn.addEventListener('click', () => applyCategory(btn.dataset.category));
+});
+
+// Recalculate on resize (responsive columns)
+window.addEventListener('resize', () => {
+  recalc();
+  render();
+});
+
+// Init on load
+applyCategory('sedans');
+
+
+// Rental form submission
+document.getElementById("rentalPaymentForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("rentalName").value;
+  let account = document.getElementById("rentalAccountName").value;
+  let duration = document.getElementById("rentalDuration").value;
+  let amount = document.getElementById("rentalAmount").value;
+  let address = document.getElementById("rentalAddress").value;
+  let phone = document.getElementById("rentalPhone").value;
+  let details = document.getElementById("rentalMessage").value;
+
+  let message = `Rental Payment Confirmation:%0A
+  Full Name: ${name}%0A
+  Account Name: ${account}%0A
+  Rental Duration: ${duration}%0A
+  Amount Paid: ${amount}%0A
+  Address: ${address}%0A
+  Phone: ${phone}%0A
+  Additional Details: ${details}%0A%0A
+  Please attach your payment receipt below.`;
+
+  let whatsappNumber = "2349129378349"; // Change to your business number
+  let url = `https://wa.me/${whatsappNumber}?text=${message}`;
+  window.open(url, "_blank");
+});
+
+// Buying form submission
+document.getElementById("buyingPaymentForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("buyingName").value;
+  let account = document.getElementById("buyingAccountName").value;
+  let amount = document.getElementById("buyingAmount").value;
+  let address = document.getElementById("buyingAddress").value;
+  let phone = document.getElementById("buyingPhone").value;
+  let details = document.getElementById("buyingMessage").value;
+
+  let message = `Purchase Payment Confirmation:%0A
+  Full Name: ${name}%0A
+  Account Name: ${account}%0A
+  Amount Paid: ${amount}%0A
+  Address: ${address}%0A
+  Phone: ${phone}%0A
+  Additional Details: ${details}%0A%0A
+  Please attach your payment receipt below.`;
+
+  let whatsappNumber = "2349129378349"; // Change to your business number
+  let url = `https://wa.me/${whatsappNumber}?text=${message}`;
+  window.open(url, "_blank");
+});
+
+
+  </script>
+</body>
+</html>
+
+</body>
+</html>
